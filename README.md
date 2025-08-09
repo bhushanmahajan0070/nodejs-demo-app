@@ -1,23 +1,19 @@
-# Node.js Demo App with CI/CD
+# Node.js Demo App with CI/CD Pipeline
 
-This is a sample Node.js application that uses GitHub Actions to build a Docker image and push it to Docker Hub.
+A simple Node.js application that demonstrates a complete CI/CD pipeline using GitHub Actions and Docker.
 
-## Steps to Use
+## How It Works
 
-1. **Create a GitHub Repo**  
-   Create a new repository on GitHub and upload all files from this project.
+- **Push to main** → triggers pipeline
+- **Installs Node.js dependencies**
+- **Runs tests** (`npm test`)
+- **Builds Docker image**
+- **Logs in to Docker Hub using repo secrets**
+- **Pushes the image tagged as `latest` and with the commit SHA**
 
-2. **Set GitHub Secrets**  
-   Go to your repository → Settings → Secrets and variables → Actions → New repository secret:  
-   - `DOCKERHUB_USERNAME` = Your Docker Hub username  
-   - `DOCKERHUB_TOKEN` = Your Docker Hub access token
+## Setup Instructions
 
-3. **Push to main branch**  
-   Commit and push changes to the `main` branch. The workflow will automatically run.
-
-4. **Check Docker Hub**  
-   The image will be available in your Docker Hub account.
-
----
-
-Created for DevOps Task 1 Internship
+1. **Clone the repository**  
+   ```bash
+   git clone https://github.com/bhushanmahajan0070/nodejs-demo-app.git
+   cd nodejs-demo-app
